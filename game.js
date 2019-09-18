@@ -22,7 +22,7 @@ function increment() {
   score++;
 }
 
-function btnPress2() {
+function buttonWorld() {
   score--;
   postToPage(score);
 }
