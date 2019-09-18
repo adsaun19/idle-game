@@ -1,21 +1,22 @@
-var score = 0;
+var score = 1; // Create a variable to store the score in
 
-var title = new HTMLElement('h1', 'Welcome to the Game');
-var button = new Button('hello');
-var buttonWorld = new Button('world');
-var columns = new Columns(2);
+var title = new Title('Welcome to the Game'); // Create a title element
+var button = new Button('hello', btnPress);   // Create a button element
+var hidden = new Button('Boo!');
+hidden.hide();
+var scr = new Text(score);                    // Create a text element
 
-button.style('50px', 'padding');
-button.edit('btn btn-danger', 'className');
+setInterval(btnPress, 1000);   // Set up a loop
 
-columns.addToColumn(1, buttonWorld);
-columns.addToColumn(2, button);
-
-setInterval(update, 5);
-setInterval(increment, 1000);
-
-function update() {
-  button.edit(score);
+function btnPress() {
+  score++;         // Increase the score
+  scr.edit(score); // Update the page with the new score
+  if(score > 10) {
+    hidden.show();
+  }
+  if(score > 15) {
+    hidden.hide(500);
+  }
 }
 
 function increment() {
