@@ -55,9 +55,9 @@ class HTMLElement {
     }
     this.type;
     this.hidden = false;
-    this.add();
+    this.finalize();
   }
-  add(parent) {
+  finalize(parent) {
     if(parent) {
       this.parent = parent;
     }
@@ -111,6 +111,15 @@ class HTMLElement {
     let element = document.getElementById(this.id);
     return element;
   }
+  remove() {
+    // Removes an element from the document
+    var element = this.getElement();
+    element.parentNode.removeChild(element);
+  }
+  addClass(className) {
+    let element = this.getElement();
+    element.classList.add(className);
+  }
 }
 
 class Button extends HTMLElement {
@@ -125,6 +134,7 @@ class Button extends HTMLElement {
     button.type = this.type;
     button.innerHTML = this.value;
     button.addEventListener('click', this.script);
+    this.addClass('m-1');
   }
 }
 
@@ -159,6 +169,18 @@ class Columns extends HTMLElement {
       let location = this.columns[index - 1].getElement();
       obj.move(location.id);
     }
+  }
+}
+
+class Section extends HTMLElement {
+  constructor(cls, id, parent) {
+    super('div', "", id, parent);
+    this.addClass(cls);
+  }
+  add(element) {
+    let child = element.getElement();
+    let parent = this.getElement();
+    parent.appendChild(child);
   }
 }
 
