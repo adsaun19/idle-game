@@ -1,5 +1,5 @@
 var welcome = new Title('Title!');
-var rockButton = new Button('Collect Rocks', increaseRocks);
+var rockButton = new Button('Collect Wood', increaseRocks);
 var stoneButton = new Button('Collect stones');
 var rocks = 0;
 var rockCount = new Text(rocks);
