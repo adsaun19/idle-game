@@ -2,6 +2,7 @@ var score = 0;
 var warm = 10;
 
 var title = new Title('Forrest'); // Create a title element
+var text = new Text('Dont let heat = 0')
 var button = new Button('Wood', btnPress);   // Create a button element
 var hidden = new Button('Build Fire', buttonPress);
 
@@ -12,8 +13,8 @@ hidden.hide();
 var scr = new Text(score);                    // Create a text element
 var wrm = new Text(warm);
 
-var warmm = new Button('Heat', heat);
-  // Set up a loop
+var warmm = new Button('Heat');
+
 
 function btnPress() {
   score = score + 1;     // Increase the score
@@ -35,7 +36,7 @@ function buttonPress() {
  warm=warm+25;
 }
 
-var loop = setInterval(warm, 1000); // Run the "createButton" function once every 1000 milliseconds (once every second)
+var loop = setInterval(heat, 1000); // Run the "createButton" function once every 1000 milliseconds (once every second)
 
 function createButton() {
   let heat = new Button('hello!');
@@ -45,12 +46,15 @@ function stopLoop() {
   clearInterval(loop);
 }
 
+
 function heat() {
  warm--;
  wrm.edit(warm);
 
 }
+if(heat < 0){
 
+}
 
 
 
