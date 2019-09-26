@@ -42,6 +42,7 @@ function createButton() {
   let heat = new Button('hello!');
 }
 
+
 function stopLoop() {
   clearInterval(loop);
 }
