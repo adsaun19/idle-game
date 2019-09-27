@@ -1,17 +1,18 @@
 var score = 0;
 var warm = 10;
+var hngr = 100;
 
 var title = new Title('Forrest'); // Create a title element
 var text = new Text('Dont let heat = 0')
 var button = new Button('Wood', btnPress);   // Create a button element
 var hidden = new Button('Build Fire (-10)', buttonPress);
-var food = new Button('Get Food')
-
+var food = new Button('Get Food', hunger);
 
 
 hidden.hide();
 var scr = new Text(score);
 var wrm = new Text(warm);
+//var hngr = new Text(hunger);
 
 var warmm = new Button('Heat');
 
@@ -27,7 +28,7 @@ function btnPress() {
   }
 }
 function hunger(){
-  
+hngr=hngr+25;
 }
 
 
