@@ -26,6 +26,10 @@ function btnPress() {
     hidden.hide(500);
   }
 }
+function hunger(){
+  
+}
+
 
 function buttonPress() {
  score=score-10;
