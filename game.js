@@ -5,7 +5,7 @@ var title = new Title('Forrest'); // Create a title element
 var text = new Text('Dont let heat = 0')
 var button = new Button('Wood', btnPress);   // Create a button element
 var hidden = new Button('Build Fire (-10)', buttonPress);
-
+var food = new Button('Get Food')
 
 
 
@@ -38,9 +38,6 @@ function buttonPress() {
 
 var loop = setInterval(heat, 1000);
 
-function createButton() {
-  let heat = new Button('hello!');
-}
 
 
 function stopLoop() {
@@ -51,13 +48,15 @@ function stopLoop() {
 function heat() {
  warm--;
  wrm.edit(warm);
+ if(warm < 0){
+ title.edit('Game Over');
+ button.remove();
+ warmm.remove();
+ hidden.remove();
+ food.remove()
+ }
 
 }
-if(heat < 0){
-;
-}
-
-
 
 function buttonWorld() {
   score--;
